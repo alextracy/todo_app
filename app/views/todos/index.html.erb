@@ -1,0 +1,21 @@
+<h1 style="text-align: center; margin-bottom: 5%">My Todos</h1>
+
+<%= form_for Todo.new, remote: true do |f| %>
+<div class="row" style="width: 50%; text-align: center; margin-left: 25%;">
+  <div class="form-group">
+    <%= f.text_field :description, class: "form-control", placeholder: "what needs doing?" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :priority, class: "form-control", placeholder: "priority level: high, med, low" %>
+  </div>
+
+  <div class="form-group" style="margin-top: 5%">
+  <%= f.submit 'Add todo', class: "btn btn-md btn-primary "%>
+  </div>
+</div>
+<% end %>
+
+<ul class="well">
+    <%= render 'todos' %>
+</ul>

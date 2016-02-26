@@ -1,0 +1,23 @@
+ <table style="margin-top: 2%" class="table table-hover">
+		<thead style="text-align:center">
+			<td>Things to do</td>
+			<td>Priority</td>
+			<td>Remove</td>
+		</thead>
+		<% @todos.each do |todo| %>
+		<tr id="<%= todo.id %>" style="text-align:center">
+			<td>
+				<%= todo.description %>
+			</td>
+			<td>
+				<strong>
+					<%= todo.priority %>
+				</strong>
+			</td>
+			<td>
+				<%= link_to ('<span class="glyphicon glyphicon-trash"></span>').html_safe, todo_path(todo), method: 'delete', remote: true %>
+			</td>
+		<tr>
+			<% end %>
+	</table>
+	
