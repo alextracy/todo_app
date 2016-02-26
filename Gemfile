@@ -52,3 +52,6 @@ end
 
 gem 'pry'
 
+gem 'jquery-turbolinks'
+
+
